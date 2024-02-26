@@ -1,0 +1,56 @@
+class Company:
+    def __init__(self, name, registration_number, address, industry):
+        self.name = name
+        self.registration_number = registration_number
+        self.address = address
+        self.industry = industry
+
+class Employee:
+    def __init__(self, name, employee_id, position, department):
+        self.name = name
+        self.employee_id = employee_id
+        self.position = position
+        self.department = department
+
+class BusinessManagementSystem:
+    def __init__(self):
+        self.companies = []
+        self.employees = []
+
+    def add_company(self, company):
+        self.companies.append(company)
+
+    def add_employee(self, employee):
+        self.employees.append(employee)
+
+    def list_companies(self):
+        for company in self.companies:
+            print(f"{company.name} - {company.registration_number} - {company.address} - {company.industry}")
+
+    def list_employees(self):
+        for employee in self.employees:
+            print(f"{employee.name} - {employee.employee_id} - {employee.position} - {employee.department}")
+
+# Create some companies and employees
+company1 = Company("ABC Inc.", "123456789", "123 Main St", "Technology")
+company2 = Company("XYZ Corp.", "987654321", "456 Elm St", "Finance")
+
+employee1 = Employee("Alice", "A123", "Manager", "IT")
+employee2 = Employee("Bob", "B456", "Engineer", "Finance")
+
+# Initialize the business management system
+bms = BusinessManagementSystem()
+
+# Add companies and employees
+bms.add_company(company1)
+bms.add_company(company2)
+
+bms.add_employee(employee1)
+bms.add_employee(employee2)
+
+# List all companies and employees
+print("List of Companies:")
+bms.list_companies()
+
+print("\nList of Employees:")
+bms.list_employees()
